@@ -12,11 +12,10 @@ struct Product {
   let description: String
 }
 
-class ProductCreator: NSObject, UITableViewDataSource, UITableViewDelegate {
+class ProductCreator {
   //Properties
-  var datasource = [Product]()
-  var tableview: UITableView?
-  let reuseID = "productCell" //immutable
+  var datasource = TableData?()
+  var tableview: UITableView? //Not mad about having to have this but required in the playground environment
   
   // MARK: JSON Download & parsing
 
@@ -25,14 +24,17 @@ class ProductCreator: NSObject, UITableViewDataSource, UITableViewDelegate {
     var workingArray = [Product]()
     for (productID, productDict) in jsonData {
       if let
-        id      = productID as String?,
-        title    = productDict["title"] as? String,
-        subtitle   = productDict["subtitle"] as? String,
+         id = productID as String?,
+        title = productDict["title"] as? String,
+        subtitle = productDict["subtitle"] as? String,
         description = productDict["description"] as? String
       {
         let newProduct = Product(id: id, title: title, subtitle: subtitle, description: description)
-        self.datasource.append(newProduct)
+        workingArray.append(newProduct)
       }
+    }
+    if let ds = self.datasource {
+      ds.datasource = workingArray
     }
     self.tableview?.reloadData()
     tableview
@@ -60,6 +62,13 @@ class ProductCreator: NSObject, UITableViewDataSource, UITableViewDelegate {
     downloadTask.resume()
   }
   
+}
+
+class TableData: NSObject, UITableViewDataSource {
+  //Properties...
+  let reuseID = "productCell" //immutable
+  var datasource = [Product]()
+  
   // MARK:  tableview  datasource methods...
   
   @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -82,11 +91,14 @@ class ProductCreator: NSObject, UITableViewDataSource, UITableViewDelegate {
 }
 
 //**** MAIN PROGRAM ****
+let tableData = TableData()
 let productCreator = ProductCreator()
+productCreator.datasource = tableData
+
 let tableFrame = CGRect(x: 0, y: 0, width: 300, height: 400) //immutable
 let tableView: UITableView? = UITableView(frame: tableFrame, style: UITableViewStyle.Plain)
-tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: productCreator.reuseID)
-tableView?.dataSource = productCreator
+tableView?.registerClass(UITableViewCell.self, forCellReuseIdentifier: tableData.reuseID)
+tableView?.dataSource = tableData
 productCreator.tableview = tableView
 
 let stringOfURL = "http://demo.pugpig.com/kgproducttesting/products.json"
