@@ -103,8 +103,3 @@ productCreator.tableview = tableView
 
 let stringOfURL = "http://demo.pugpig.com/kgproducttesting/products.json"
 productCreator.fetchData(string: stringOfURL)
-
-
-
-
-
