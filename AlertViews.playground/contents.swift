@@ -44,3 +44,6 @@ alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
 alert.show()
 
 XCPShowView("Alert", alert)
+
+
+
