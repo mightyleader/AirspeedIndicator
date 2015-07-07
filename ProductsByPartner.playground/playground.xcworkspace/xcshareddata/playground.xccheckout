@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>ED8D67D8-619C-4EB3-A339-2ACC1FDB2232</string>
+	<key>IDESourceControlProjectName</key>
+	<string>playground</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BD4F410C54034D08C0C7BC74AC868B390B19176B</key>
+		<string>https://github.com/mightyleader/AirspeedIndicator.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ProductsByPartner.playground/playground.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BD4F410C54034D08C0C7BC74AC868B390B19176B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mightyleader/AirspeedIndicator.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BD4F410C54034D08C0C7BC74AC868B390B19176B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BD4F410C54034D08C0C7BC74AC868B390B19176B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AirspeedIndicator</string>
+		</dict>
+	</array>
+</dict>
+</plist>

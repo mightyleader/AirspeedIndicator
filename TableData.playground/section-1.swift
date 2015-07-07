@@ -73,7 +73,6 @@ class TableData: NSObject, UITableViewDataSource {
   
   @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: reuseID)
-    //tableView.dequeueReusableCellWithIdentifier(reuseID, forIndexPath: indexPath) as! UITableViewCell
     cell.textLabel?.text = self.datasource[indexPath.row].title
     cell.detailTextLabel?.text = self.datasource[indexPath.row].id
     cell.textLabel?.textColor = UIColor.blueColor()
